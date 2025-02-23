@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 
-const Login: React.FC = (props) => {
+const Login: React.FC = (props:any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
