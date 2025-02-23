@@ -61,7 +61,7 @@ const Header = () => {
         }, []);
   return (
     <div>
-         <header className="heder-one md:hidden sm:block fixed w-full top-[0] z-50">
+         <header className="heder-one md:hidden sm:block fixed w-full top-[1] z-50">
     <div className="header-two-container">
         <div className="row">
             <div className="col-12">
@@ -562,7 +562,7 @@ const Header = () => {
         </div>
     </div>
 </header>
-<header className="heder-one md:block hidden  fixed top-[0] left-[-10] w-[95%] shadow-md z-50 ">
+<header className="heder-one md:block hidden  fixed top-1 left-[-10] w-[95%] shadow-md z-50 ">
     <div className="header-two-container">
         <div className="row">
             <div className="col-12">
