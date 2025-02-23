@@ -1,20 +1,21 @@
 'use client';
 import { useState } from "react";
 
-const Login: React.FC = (props:any) => {
+interface LoginProps {
+  setIsLoggedIn: (value: boolean) => void;
+}
+
+const Login: React.FC<LoginProps> = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if(email === "lmc@admin.com" && password === "admin1234")
-    {
-        props.setIsLoggedIn(true);
+    if (email === "lmc@admin.com" && password === "admin1234") {
+      setIsLoggedIn(true);
+    } else {
+      alert('Wrong email or password');
     }
-    else{
-        alert('wrong email or password')
-    }
-    alert(`Logging in with ${email}`);
   };
 
   return (
