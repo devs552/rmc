@@ -39,8 +39,8 @@ const Footer = () => {
                             <i className="fa-solid fa-envelope"></i>
                         </div>
                         <h6 className="title text-light">Need Support</h6>
-                        <a href="#">support@elever.com</a>
-                        <a href="#">help-elver@gmail.com</a>
+                        <a href="#">support@rmc.com</a>
+                        <a href="#">help-rmc@gmail.com</a>
                     </div>
                     <div className="single-contact-area-box">
                         <div className="icon">

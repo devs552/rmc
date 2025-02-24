@@ -26,7 +26,7 @@ const page = () => {
   return (
     <div>
         <Header />
-        <div className='inner md:mt-[145px] mt-[0px] '>
+        <div className='inner md:mt-[145px] mt-[70px] '>
       <Service />
       </div>
       <Footer />

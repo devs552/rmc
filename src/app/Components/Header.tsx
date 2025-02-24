@@ -84,7 +84,7 @@ const Header = () => {
                                 </div>
                                 <div className="single-info">
                                     <div className="icon"><i className="fa-regular fa-envelope"></i></div>
-                                    <a href="mailto:name@email.com">info@elever.com</a>
+                                    <a href="mailto:name@email.com">info@rmc.com</a>
                                 </div>
                             </div>
                             <div className="start-top">
@@ -164,7 +164,7 @@ const Header = () => {
                                                                                 <h5 className="title">Design Build
                                                                                     Services</h5>
                                                                                 <p className="details">
-                                                                                    Elever Architecture is a
+                                                                                    RMC Architecture is a
                                                                                     New-York-based studio on modern
                                                                                     design,
                                                                                     interiors and landscapes...
@@ -585,7 +585,7 @@ const Header = () => {
                                 </div>
                                 <div className="single-info">
                                     <div className="icon"><i className="fa-regular fa-envelope"></i></div>
-                                    <a href="mailto:name@email.com">info@elever.com</a>
+                                    <a href="mailto:name@email.com">info@rmc.com</a>
                                 </div>
                             </div>
                             <div className="start-top">
@@ -989,7 +989,7 @@ const Header = () => {
 </header>
 
 {onExpand && (
-  <div id="side-bar" className="bg-dark flex flex-col mt-[0px] header-two fixed z-50 mt-[76px] h-[86%] overflow-y-auto"> 
+  <div id="side-bar" className="bg-dark flex flex-col mt-[0px] header-two fixed z-50 mt-[56px] h-[86%] overflow-y-auto"> 
     <div className='w-full absolute '>
     <button className="bg-[#f84e1d] text-[20px] w-[15%] h-[15%] p-2 mt-2 mr-4  float-right text-light" onClick={()=>setOnExpand(false)}>
       <b>X</b>

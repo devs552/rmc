@@ -71,7 +71,7 @@ export default function Home() {
   return (
     <div>
  <Header />
-<div className="banner-swiper-area-one mySwiper-banner-one md:mt-[145px] mt-[0px] " >
+<div className="banner-swiper-area-one mySwiper-banner-one md:mt-[145px] mt-[70px] " >
 <BannerSlider />
 </div>
 <Funfact />
