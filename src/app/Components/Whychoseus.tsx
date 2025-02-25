@@ -32,7 +32,7 @@ const Whychoseus = () => {
                     <div className="title-wrapper-left mb--50">
                         <span className="pre">How We Works</span>
                         <h2 className="title">
-                            How To Work With Elever <br/>
+                            How To Work With Rmc <br/>
                             Construction Builder
                         </h2>
                     </div>

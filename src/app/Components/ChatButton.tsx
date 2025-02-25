@@ -47,7 +47,7 @@ const ChatButton: React.FC = () => {
         "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
         messages: [{ role: "system", content: `You are a professional chat support representative for a concrete repair, foundation recovery, and waterproofing company. Your goal is to assist customers by providing clear, friendly, and informative responses about the services offered. Always be professional, approachable, and helpful.
 
 If a customer inquires about:
@@ -113,7 +113,7 @@ Waterproofing:
       {isChatOpen && (
         <div className="fixed bottom-20 right-6 w-[90%] md:w-[40%] h-[60%] bg-white border border-gray-300 shadow-2xl rounded-xl z-50">
           <div className="p-4 border-b bg-[#f84e1d] text-white font-bold flex justify-between items-center rounded-t-xl">
-            Chat Support
+            Chat Support 
             <button onClick={() => setIsChatOpen(false)} className="text-white w-[10%] p-3 font-bold text-lg rounded">X</button>
           </div>
           <div className="p-4 h-[70%] overflow-y-scroll flex flex-col gap-2">

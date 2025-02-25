@@ -76,7 +76,7 @@ const Service = () => {
                     <div className="service-details-inner-area-wrapper">
                         <h4 className="title">Description Of The Service</h4>
                         <p className="disc">
-                            Building a custom home is a dream for many, and at Elever, we believe that the journey to
+                            Building a custom home is a dream for many, and at Rmc, we believe that the journey to
                             achieving that dream should be as inspiring as the end result. Our Custom Home Building
                             service is designed with you in mind, combining expert craftsmanship, the highest-quality
                             materials, and a commitment to excellence in every phase of construction. From the initial
@@ -282,7 +282,7 @@ const Service = () => {
                         <div className="title-wrapper-left mb--50">
                             <span className="pre">How We Works</span>
                             <h2 className="title">
-                                How To Work With Elever <br/>
+                                How To Work With Rmc <br/>
                                 Construction Builder
                             </h2>
                         </div>
