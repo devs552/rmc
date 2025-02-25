@@ -39,41 +39,64 @@ const ChatButton: React.FC = () => {
 
   // Fetch AI response
   const getAIResponse = async (message: string): Promise<string> => {
-    const apiKey = process.env.OPENAI_SECRET_KEY;
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [{ role: "system", content: `You are a professional chat support representative for a concrete repair, foundation recovery, and waterproofing company. Your goal is to assist customers by providing clear, friendly, and informative responses about the services offered. Always be professional, approachable, and helpful.
-
-If a customer inquires about:
-
-Concrete Repair:
-- Explain services like Driveway Concrete Leveling, Porch & Patio Leveling, Basement Floor Leveling, Garage Floor Leveling, Sidewalk Leveling, Void Fill, Road and Highway Leveling, Mudjacking, and Concrete Caulking Services.
-- Offer insights into how these solutions restore safety, appearance, and durability.
-- If relevant, suggest scheduling an inspection for an accurate assessment.
-
-Foundation Recovery:
-- Cover Helical Piers, Wall Stabilization, Crack Repair, Floor Stabilizers & Joist Support, Egress Window Installation & Repair, and Micropiles.
-- Address concerns about foundation settling, wall cracks, and structural integrity.
-- Emphasize long-term stability and recommend expert evaluation if needed.
-
-Waterproofing:
-- Detail Sump Pump Installation, Basement Perimeter Drains, Crawlspace & Basement Encapsulation, and Foundation Leak Repair.
-- Explain how these services prevent water damage, mold growth, and structural issues.
-- Offer guidance on keeping basements dry and foundation walls secure.
-- Maintain a helpful and engaging tone, ensuring customers feel confident about reaching out for further details or scheduling a service consultation.` }, 
-        { role: "user", content: message }],
-      }),
-    });
-
-    const data = await response.json();
-    return data.choices[0].message.content;
+    try {
+      const apiKey = process.env.OPENAI_SECRET_KEY;
+      
+      if (!apiKey) {
+        throw new Error("OpenAI API key is missing.");
+      }
+  
+      const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: "gpt-4o-mini",
+          messages: [
+            { 
+              role: "system", 
+              content: `You are a professional chat support representative for a concrete repair, foundation recovery, and waterproofing company. Your goal is to assist customers by providing clear, friendly, and informative responses about the services offered. Always be professional, approachable, and helpful.
+  
+  Concrete Repair:
+  - Explain services like Driveway Concrete Leveling, Porch & Patio Leveling, Basement Floor Leveling, Garage Floor Leveling, Sidewalk Leveling, Void Fill, Road and Highway Leveling, Mudjacking, and Concrete Caulking Services.
+  - Offer insights into how these solutions restore safety, appearance, and durability.
+  - If relevant, suggest scheduling an inspection for an accurate assessment.
+  
+  Foundation Recovery:
+  - Cover Helical Piers, Wall Stabilization, Crack Repair, Floor Stabilizers & Joist Support, Egress Window Installation & Repair, and Micropiles.
+  - Address concerns about foundation settling, wall cracks, and structural integrity.
+  - Emphasize long-term stability and recommend expert evaluation if needed.
+  
+  Waterproofing:
+  - Detail Sump Pump Installation, Basement Perimeter Drains, Crawlspace & Basement Encapsulation, and Foundation Leak Repair.
+  - Explain how these services prevent water damage, mold growth, and structural issues.
+  - Offer guidance on keeping basements dry and foundation walls secure.
+  - Maintain a helpful and engaging tone, ensuring customers feel confident about reaching out for further details or scheduling a service consultation.` 
+            },
+            { role: "user", content: message }
+          ],
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`OpenAI API Error: ${response.status} ${response.statusText}`);
+      }
+  
+      const data = await response.json();
+  
+      if (!data.choices || data.choices.length === 0) {
+        throw new Error("Invalid response from OpenAI.");
+      }
+  
+      return data.choices[0].message.content;
+    } catch (error) {
+      console.error("Error fetching AI response:", error);
+      return "Sorry, an error occurred while processing your request. Please try again later.";
+    }
   };
+  
 
   // Handle user message and send to AI
   const sendMessage = async (): Promise<void> => {
